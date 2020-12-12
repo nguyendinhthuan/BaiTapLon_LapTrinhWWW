@@ -27,12 +27,12 @@
 	
 	
 	<!-- CONTROLLER -->
+	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="vn.edu.iuh.controllers"></context:component-scan>
 	
 	
 	<!-- Cấu hình để Spring sử dụng Annotation -->
 	<mvc:annotation-driven></mvc:annotation-driven>
-	<context:annotation-config></context:annotation-config>
 	
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
