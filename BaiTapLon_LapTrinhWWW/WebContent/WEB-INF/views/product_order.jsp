@@ -95,7 +95,7 @@ tr{ border : 10px solid white;}
 				</table>
 				
 				<div class = "w3-container w3-right w3-xlarge" style="margin-right: 100px;">
-					<br><a href = "#" class = "w3-button w3-black w3-margin"> <i class = "fa fa-arrow-left"></i>  Tiếp tục mua hàng</a>
+					<br><a href = "home" class = "w3-button w3-black w3-margin"> <i class = "fa fa-arrow-left"></i>  Tiếp tục mua hàng</a>
 					<a href = "#" class = "w3-button w3-black">Thanh toán  <i class = "fa fa-arrow-right"></i></a>
 				</div>			
 			</div>

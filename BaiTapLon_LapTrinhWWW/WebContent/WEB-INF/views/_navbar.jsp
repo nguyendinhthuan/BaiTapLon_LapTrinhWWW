@@ -9,8 +9,11 @@
 	</a>
 	<div id="demoAcc"
 		class="w3-bar-block w3-hide w3-padding-large w3-medium">
-		<a href="#" class="w3-bar-item w3-button w3-light-grey"><i
-			class="fa fa-caret-right w3-margin-right"></i>Máy In</a> <a href="#"
+		<a href="${pageContext.request.contextPath}/product_mayin" 
+			class="w3-bar-item w3-button w3-light-grey"><i
+			class="fa fa-caret-right w3-margin-right"></i>Máy In</a> 
+			
+		<a href="${pageContext.request.contextPath}/product_mayscan"
 			class="w3-bar-item w3-button w3-light-grey"><i
 			class="fa fa-caret-right w3-margin-right"></i>Máy Scan</a>
 	</div>
