@@ -1,100 +1,148 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
-<head>
 <meta charset="utf-8">
 <title>Bootshop online Shopping cart</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
+
 <!-- Bootstrap style -->
 <link id="callCss"
 	href="<c:url value="/resources/themes/bootshop/bootstrap.min.css" />"
 	rel="stylesheet" media="screen">
 <link href="<c:url value="/resources/themes/css/base.css" />"
 	rel="stylesheet" media="screen" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.w3-sidebar a {
+	font-family: "Roboto";
+	text-decoration: none;
+}
+
+body, h1, h2, h3, h4, h5, h6, .w3-wide {
+	font-family: "Montserrat";
+}
+</style>
+
 <!-- Bootstrap style responsive -->
 <link
 	href="<c:url value="/resources/themes/css/bootstrap-responsive.min.css" />"
 	rel="stylesheet" />
 <link href="<c:url value="/resources/themes/css/font-awesome.css" />"
 	rel="stylesheet" type="text/css">
-<!-- Google-code-prettify -->
-<link
-	href="<c:url value="/resources/themes/js/google-code-prettify/prettify.css" />"
-	rel="stylesheet" />
-<link rel="shortcut icon"
-	href="<c:url value="/resources/themes/images/ico/favicon.ico" />">
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="<c:url value="/resources/themes/images/ico/apple-touch-icon-144-precomposed.png" />">
-<link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="<c:url value="/resources/themes/images/ico/apple-touch-icon-114-precomposed.png" />">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="<c:url value="/resources/themes/images/ico/apple-touch-icon-72-precomposed.png" />">
-<link rel="apple-touch-icon-precomposed"
-	href="<c:url value="/resources/themes/images/ico/apple-touch-icon-57-precomposed.png" />">
-</head>
-<body>
-	<header>
-		<jsp:include page="_header.jsp"></jsp:include>
-	</header>
-	<div id="mainBody">
-		<div class="container">
-			<div class="row">
-				<!-- Sidebar ================================================== -->
-				<div id="sidebar" class="span3">
-					<div class="well well-small">
-						<a href="${pageContext.request.contextPath}/product_summary"><img
-							src="<c:url value="/resources/themes/images/ico-cart.png" />"
-							alt="cart">${sessionScope.myCartNum} Giỏ hàng của bạn</a>
-					</div>
-					<ul id="sideManu" class="nav nav-tabs nav-stacked">
-						<li class="subMenu open"><a> DANH MỤC</a>
-							<ul>
-								<li><a class="active"
-									href="${pageContext.request.contextPath}/products_mayin"><i
-										class="icon-chevron-right"></i>MÁY IN</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/products_mayscan"><i
-										class="icon-chevron-right"></i>MÁY SCAN</a></li>
-							</ul></li>
-					</ul>
-					<br />
-				</div>
-				<!-- Sidebar end=============================================== -->
-				<div class="span9">
-					<h4>Các sản phẩm</h4>
 
+<body>
+	<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top"
+		style="z-index: 3; width: 250px" id="mySidebar">
+		<div class="w3-container w3-display-container w3-padding-16">
+			<h3 class="w3-wide">
+				<a href="home"><img width="30%" height="30%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
+			</h3>
+		</div>
+		<jsp:include page="_navbar.jsp"></jsp:include>
+	</nav>
+
+	<div id="mainBody">
+		<!-- !PAGE CONTENT! -->
+		<div class="w3-main" style="margin-left: 250px">
+
+			<header class="w3-container w3-xxlarge">
+				<div class="w3-left">Trang chủ</div>
+				<div class="w3-right w3-margin-right w3-right-align" style="margin-top: 20px">
+					<p>
+						<a href="product_order"><i class="fa fa-shopping-cart "></i></a>
+					</p>
+				</div>
+				<div class="w3-row w3-right w3-section"
+					style="width: 40%; margin-right: 30px;">
+					<div class="w3-col" style="width: 50px;">
+						<a href="#"><i class="fa fa-search "></i></a>
+					</div>
+					<div class="w3-rest ">
+						<input class="w3-input w3-border w3-padding-16" name=""
+							type="text" placeholder="Search ...">
+					</div>
+				</div>
+			</header>
+
+			<!-- Image header -->
+			<div class="w3-display-container w3-container">
+				<img src="<c:url value="/resources/themes/images/images.jfif" />"
+					alt="image" style="width: 100%;">
+				<div class="w3-display-topleft w3-text-black"
+					style="padding: 24px 48px">
+					<h1 class="w3-jumbo w3-hide-small" style="padding: 20px 0px">Mua
+						bán máy in</h1>
+					<h1 class="w3-hide-small" style="padding: 20px 0px">Củ - mới</h1>
+					<p>
+						<a href="#procontent"
+							class="w3-button w3-black w3-padding-large w3-large">MUA NGAY</a>
+					</p>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="row">
 					<ul class="thumbnails">
 						<c:forEach var="sanpham" items="${list}">
 							<li class="span3">
-
 								<div class="thumbnail">
-									<a href="product_details/${sanpham.maSanPham}"><img
+									<a href="product_detail/${sanpham.maSanPham}"><img
 										src="<c:url value="/resources/${sanpham.urlHinhAnh}" />"
 										alt="" /></a>
 									<div class="caption">
 										<h5>${sanpham.maSanPham}</h5>
 										<h5>${sanpham.tenSanPham}</h5>
 										<h4 style="text-align: center">
-											<li>
-											<p
-												href="product_details/${sanpham.maSanPham}">${sanpham.donGia} VNĐ</p>
-											</li>
+											<p href="product_detail/${sanpham.maSanPham}">${sanpham.donGia}</p>
 										</h4>
 									</div>
 								</div>
-
 							</li>
 						</c:forEach>
 					</ul>
-
 				</div>
 			</div>
 		</div>
+		
+		<jsp:include page="_footer.jsp"></jsp:include>
 	</div>
+
+	<script>
+		// Accordion 
+		function myAccFunc() {
+			var x = document.getElementById("demoAcc");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else {
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+
+		// Click on the "Jeans" link on page load to open the accordion for demo purposes
+		document.getElementById("myBtn").click();
+
+		// Open and close sidebar
+		function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+			document.getElementById("myOverlay").style.display = "block";
+		}
+
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+			document.getElementById("myOverlay").style.display = "none";
+		}
+	</script>
+
 	<script src="<c:url value="/resources/themes/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/themes/js/bootstrap.min.js" />"></script>
 	<script
