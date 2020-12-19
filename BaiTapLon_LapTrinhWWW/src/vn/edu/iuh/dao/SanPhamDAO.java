@@ -92,8 +92,10 @@ public class SanPhamDAO {
 		return jdbcTemplate.update(sql);
 	}
 
-	public SanPham getSanPhamByMaSanPham(String masp) {
-		String sql = "SELECT * FROM SanPham WHERE maSanPham='" + masp + "'";
-		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<SanPham>(SanPham.class));
-	}
+	/*
+	 * public SanPham getSanPhamByMaSanPham(String masp) { String sql =
+	 * "SELECT * FROM SanPham WHERE maSanPham='" + masp + "'"; return
+	 * jdbcTemplate.queryForObject(sql, new
+	 * BeanPropertyRowMapper<SanPham>(SanPham.class)); }
+	 */
 }
