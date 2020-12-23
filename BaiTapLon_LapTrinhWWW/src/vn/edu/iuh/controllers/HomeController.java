@@ -21,4 +21,9 @@ public class HomeController {
 		return new ModelAndView("home", "list", list);
 	}
 	
+	@RequestMapping(value = "/admin")
+	public ModelAndView adminview() {
+		List<SanPham> list = sanPhamDAO.getAllSanPham();
+		return new ModelAndView("product_admin", "listpros", list);
+	}
 }

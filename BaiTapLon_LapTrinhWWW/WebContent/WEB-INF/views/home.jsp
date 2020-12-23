@@ -42,7 +42,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 
 <body>
 	<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top"
-		style="z-index: 3; width: 250px" id="mySidebar">
+		style="z-index: 3; width: 220px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
 				<a href="home"><img width="30%" height="30%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
@@ -76,13 +76,13 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 
 			<!-- Image header -->
 			<div class="w3-display-container w3-container">
-				<img src="<c:url value="/resources/themes/images/images.jfif" />"
-					alt="image" style="width: 100%;">
+				<img src="<c:url value="/resources/themes/images/desktop.png" />"
+					alt="image" style="width: 70%; height: 70%">
 				<div class="w3-display-topleft w3-text-black"
 					style="padding: 24px 48px">
 					<h1 class="w3-jumbo w3-hide-small" style="padding: 20px 0px">Mua
 						bán máy in</h1>
-					<h1 class="w3-hide-small" style="padding: 20px 0px">Củ - mới</h1>
+					<h1 class="w3-hide-small" style="padding: 20px 0px">Cũ - mới</h1>
 					<p>
 						<a href="#procontent"
 							class="w3-button w3-black w3-padding-large w3-large">MUA NGAY</a>
@@ -90,8 +90,9 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 				</div>
 			</div>
 			
-			<div class="container">
+			<div class="container" id="procontent">
 				<div class="row">
+					<h4>Danh sách sản phẩm</h4>
 					<ul class="thumbnails">
 						<c:forEach var="sanpham" items="${list}">
 							<li class="span3">
@@ -103,7 +104,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 										<h5>${sanpham.maSanPham}</h5>
 										<h5>${sanpham.tenSanPham}</h5>
 										<h4 style="text-align: center">
-											<p href="product_detail/${sanpham.maSanPham}">${sanpham.donGia}</p>
+											<p href="product_detail/${sanpham.maSanPham}">${sanpham.donGia} VNĐ</p>
 										</h4>
 									</div>
 								</div>
@@ -145,10 +146,8 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 
 	<script src="<c:url value="/resources/themes/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/themes/js/bootstrap.min.js" />"></script>
-	<script
-		src="<c:url value="/resources/themes/js/google-code-prettify/prettify.js" />"></script>
+	<script src="<c:url value="/resources/themes/js/google-code-prettify/prettify.js" />"></script>
 	<script src="<c:url value="/resources/themes/js/bootshop.js" />"></script>
-	<script
-		src="<c:url value="/resources/themes/js/jquery.lightbox-0.5.js" />"></script>
+	<script src="<c:url value="/resources/themes/js/jquery.lightbox-0.5.js" />"></script>
 </body>
 </html>

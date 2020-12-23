@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -91,12 +92,17 @@ tr{ border : 10px solid white;}
 								<td>${map.value.sanPham.donGia * map.value.soLuong} VNĐ</td>
 							</tr>
 						</c:forEach>
+						
+						<tr>
+							<td colspan="6" style="text-align: right"><strong>Tổng Tiền : </strong></td>
+							<td class="label label-important" style="display: block"><h6><strong>${sessionScope.myCartTotal} VNĐ</strong></h6></td>
+						</tr>
 					</tbody>	
 				</table>
 				
-				<div class = "w3-container w3-right w3-xlarge" style="margin-right: 100px;">
-					<br><a href = "home" class = "w3-button w3-black w3-margin"> <i class = "fa fa-arrow-left"></i>  Tiếp tục mua hàng</a>
-					<a href = "#" class = "w3-button w3-black">Thanh toán  <i class = "fa fa-arrow-right"></i></a>
+				<div class = "w3-container w3-right w3-xlarge" style="margin-right: 100px">
+					<br><a href = "${pageContext.request.contextPath }/home#procontent" class = "w3-button w3-black w3-margin"> <i class = "fa fa-arrow-left"></i>  Tiếp tục mua hàng</a>
+					<a href = "${pageContext.request.contextPath}/product_order/summary" class = "w3-button w3-black">Thanh toán<i class = "fa fa-arrow-right"></i></a>
 				</div>			
 			</div>
 		</div>

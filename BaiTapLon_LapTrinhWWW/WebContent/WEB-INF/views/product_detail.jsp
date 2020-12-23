@@ -88,10 +88,17 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 							<hr class="soft" />
 							<form class="form-horizontal qtyFrm">
 								<div class="control-group">
-									<label class="control-label"><h2><spanstyle="color:red">${SanPham.donGia}</span></h2></label>
+									<label class="control-label"><h2><span style="color:red">${SanPham.donGia}</span></h2></label>
 									<div class="controls">
 										<a href="${pageContext.request.contextPath }/themGioHang/${SanPham.maSanPham}">
-											<button style="margin-top: 20px; margin-left: 50px" type="button" class="btn btn-warning">Thêm vào giỏ hàng
+											<button style="margin-top: 20px; margin-left: 50px" type="button" class="btn btn-warning"
+												<c:choose>
+							    					<c:when test="${SanPham.soLuongTon > 0}">
+							    					</c:when>    
+							    					<c:otherwise>
+							       					disabled
+							    					</c:otherwise>
+												</c:choose>>Thêm vào giỏ hàng
 										 		<i class=" icon-shopping-cart"></i>
 											</button>
 										</a>
@@ -107,10 +114,9 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 							    </c:when>    
 							    <c:otherwise>
 							       <h4 style="color:red">Hết hàng</h4>
-							       
 							    </c:otherwise>
 							</c:choose>
-													<hr class="soft clr" />
+							<hr class="soft clr" />
 							<p>${SanPham.moTa}</p>
 							<br class="clr" />
 							<hr class="soft" />
@@ -118,15 +124,15 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 			</div>
 		</div>
 	</div>
+	
 	<footer>
 		<jsp:include page="_footer.jsp"></jsp:include>
 	</footer>
+	
 	<script src="<c:url value="/resources/themes/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/themes/js/bootstrap.min.js" />"></script>
-	<script
-		src="<c:url value="/resources/themes/js/google-code-prettify/prettify.js" />"></script>
+	<script src="<c:url value="/resources/themes/js/google-code-prettify/prettify.js" />"></script>
 	<script src="<c:url value="/resources/themes/js/bootshop.js" />"></script>
-	<script
-		src="<c:url value="/resources/themes/js/jquery.lightbox-0.5.js" />"></script>
+	<script src="<c:url value="/resources/themes/js/jquery.lightbox-0.5.js" />"></script>
 </body>
 </html>
