@@ -49,9 +49,8 @@ public class ProductAdminController {
 		if(errors.hasErrors()) {
 			return new ModelAndView("insert_product", "message", "Vui lòng nhập các thông tin sau đây");
 		}
-		//sanPhamDAO.save(sanpham);
+		sanPhamDAO.save(sanpham);
 		return new ModelAndView("redirect:/admin");
-
 	}
 	
 	@RequestMapping(value = "/admin/showformedit/editproduct", method = RequestMethod.POST)
@@ -69,7 +68,7 @@ public class ProductAdminController {
 			if(hd.getTinhTrang().equals("cho duyet"))
 				for(ChiTietHoaDon ct : hd.getChiTietHoaDon()) {
 					if(ct.getMaSanPham().equals(maSanPham) == true)
-						mess = "Sản phẩm đang được đặt hầng";
+						mess = "Sản phẩm đang được đặt hàng";
 					else
 						mess = "";
 				}

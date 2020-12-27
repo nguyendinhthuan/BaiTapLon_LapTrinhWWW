@@ -88,7 +88,7 @@ public class SanPhamDAO {
 	public int update(SanPham sp) {
 		String sql = "UPDATE SanPham SET tenSanPham='" + sp.getTenSanPham() + "',donGia=" + sp.getDonGia()
 				+ ",urlHinhAnh='" + sp.getUrlHinhAnh() + "'," + "moTa='" + sp.getMoTa() + "',soLuongTon="
-				+ sp.getSoLuongTon() + ",loaiSanPham='" + sp.getLoaiSanPham() + "'";
+				+ sp.getSoLuongTon() + ",loaiSanPham='" + sp.getLoaiSanPham() + "'" + "WHERE maSanPham = '" + sp.getMaSanPham() + "'";
 		return jdbcTemplate.update(sql);
 	}
 

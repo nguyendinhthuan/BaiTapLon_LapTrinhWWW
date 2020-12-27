@@ -77,7 +77,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 			<!-- Image header -->
 			<div class="w3-display-container w3-container">
 				<img src="<c:url value="/resources/themes/images/desktop.png" />"
-					alt="image" style="width: 70%; height: 70%">
+					alt="image" style="width: 80%; height: 80%">
 				<div class="w3-display-topleft w3-text-black"
 					style="padding: 24px 48px">
 					<h1 class="w3-jumbo w3-hide-small" style="padding: 20px 0px">Mua
