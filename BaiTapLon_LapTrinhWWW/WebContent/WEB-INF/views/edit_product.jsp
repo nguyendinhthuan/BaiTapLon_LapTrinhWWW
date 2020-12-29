@@ -69,14 +69,14 @@ tr {
 				<hr class="soft">
 			</div>
 			<div class="w3-third w3-center">
-				<h2>Thêm sản phẩm mới</h2>
+				<h2>Cập nhật sản phẩm</h2>
 			</div>
 			<div class="w3-third">
 				<hr class="soft">
 			</div>
 		</div>
 		<form:form id="formproduct" class="" action="editproduct"
-			method="POST">
+			method="POST" modelAttribute="command">
 			<div class="w3-row">
 				<div class="w3-half" style="margin-left: 15%;">
 
@@ -93,13 +93,18 @@ tr {
 						</tr>
 						<tr>
 							<td><h5>Loại sản phẩm:</h5></td>
-							<td><form:select path="loaiSanPham" items="${loaiSanPham }"
-									itemValue="id" itemLabel="name"></form:select></td>
+							<td><form:radiobutton class="w3-padding-16" path="loaiSanPham" value="may in" label="Máy in"/></td>
+							<td><form:radiobutton class="w3-padding-16" path="loaiSanPham" value="may scan" label="Máy scan"/></td>
+						</tr>
+						
+						<tr>
+							<td><h5>Hình ảnh:</h5></td>
+							<td><form:input path="urlHinhAnh"/></td>
 						</tr>
 						<tr>
 							<td><h5>Số lượng tồn:</h5></td>
 							<td><form:input type="number" min="0" class="w3-padding-16"
-									path="soLuongTon" /></td>
+									path="soLuongTon" style="margin-top: 15px"/></td>
 						</tr>
 						<tr>
 							<td><h5>Thông tin sản phẩm:</h5></td>

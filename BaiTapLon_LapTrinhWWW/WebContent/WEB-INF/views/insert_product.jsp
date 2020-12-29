@@ -103,12 +103,12 @@ tr {
 						</tr>
 						<tr>
 							<td><h5>Hình ảnh:</h5></td>
-							<td><form:input type="text" path="urlHinhAnh"
-									class="w3-padding-16" value="may-in-hp-laserjet-pro-m15a.jpg" /></td>
+							<td><form:input type="file" path="urlHinhAnh"
+									class="w3-padding-16"/></td>
 						</tr>
 						<tr>
 							<td><h5>Loại sản phẩm:</h5></td>
-							<td><form:select path="loaiSanPham">
+							<td><form:select path="loaiSanPham" style="margin-top: 25px">
 									<form:option value="may in" label="Máy In"></form:option>
 									<form:option value="may scan" label="Máy Scan"></form:option>
 								</form:select></td>
