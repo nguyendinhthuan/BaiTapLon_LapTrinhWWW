@@ -76,7 +76,7 @@ tr {
 			</div>
 		</div>
 		<form:form id="formproduct" class="" action="editproduct"
-			method="POST" modelAttribute="command">
+			method="POST" >
 			<div class="w3-row">
 				<div class="w3-half" style="margin-left: 15%;">
 
@@ -85,7 +85,6 @@ tr {
 						<tr>
 							<td><h5>Tên sản phẩm:</h5></td>
 							<td><form:input path="tenSanPham" class="w3-padding-16" /></td>
-
 						</tr>
 						<tr>
 							<td><h5>Đơn giá:</h5></td>
@@ -93,13 +92,14 @@ tr {
 						</tr>
 						<tr>
 							<td><h5>Loại sản phẩm:</h5></td>
-							<td><form:radiobutton class="w3-padding-16" path="loaiSanPham" value="may in" label="Máy in"/></td>
-							<td><form:radiobutton class="w3-padding-16" path="loaiSanPham" value="may scan" label="Máy scan"/></td>
+							<td><form:select path="loaiSanPham" items="${loaisanpham }"
+									itemValue="id" itemLabel="name"></form:select></td>
 						</tr>
 						
 						<tr>
 							<td><h5>Hình ảnh:</h5></td>
-							<td><form:input path="urlHinhAnh"/></td>
+							<td><form:input type="file" path="urlHinhAnh"/></td>
+							<td><form:errors path="urlHinhAnh"></form:errors></td>
 						</tr>
 						<tr>
 							<td><h5>Số lượng tồn:</h5></td>
@@ -110,7 +110,6 @@ tr {
 							<td><h5>Thông tin sản phẩm:</h5></td>
 							<td><form:textarea class="w3-padding-16" path="moTa" /></td>
 						</tr>
-
 					</table>
 					<div class="control-group">
 						<div class="controls">

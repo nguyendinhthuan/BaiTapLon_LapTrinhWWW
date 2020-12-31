@@ -23,8 +23,11 @@
     </bean>
     
     
-    <mvc:resources mapping="/resources/**" location="/resources/bootstrap/" cache-period="31556926" />
+    <mvc:resources mapping="/resources/**" location="/resources/bootstrap/themes/images/products/" cache-period="31556926" />
 	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="20971520"></property>
+	</bean>
 	
 	<!-- CONTROLLER -->
 	<context:annotation-config></context:annotation-config>

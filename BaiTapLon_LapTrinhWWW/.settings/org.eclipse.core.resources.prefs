@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/views/_navbar.jsp=UTF-8
 encoding//src/vn/edu/iuh/controllers/ProductAdminController.java=UTF-8
+encoding//src/vn/edu/iuh/entities/SanPham.java=UTF-8

@@ -66,6 +66,26 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 						<th>Thao tác</th>
 					</tr>	
 				</table>
+				
+				<c:choose>
+					<c:when test="${pageContext.request.queryString == 'message=work'}">
+						<div class="w3-panel w3-red w3-display-container" style = "height : 80px;">
+							<span onclick="this.parentElement.style.display='none'"
+								class="w3-button w3-red w3-large w3-display-topright">x</span>
+							<p class = "w3-center w3-large w3-display-middle">Sản phẩm không thể xóa do đang được đặt hàng</p>
+
+						</div>
+					</c:when>
+					<c:when test="${pageContext.request.queryString == 'message=fail'}">
+						<div class="w3-panel w3-red w3-display-container" style = "height : 80px;">
+							<span onclick="this.parentElement.style.display='none'"
+								class="w3-button w3-red w3-large w3-display-topright">x</span>
+							<p class = "w3-center w3-large w3-display-middle">Sản phẩm xóa thành công</p>
+
+						</div>
+					</c:when>
+				</c:choose>
+				
 				<table class="w3-table w3-large w3-border">
 					<c:forEach var = "sanpham" items = "${listpros }">
 						<tr>
@@ -93,7 +113,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 									</div>
 								</div>
 							</td>
-							<td style="width: 15%;" class="w3-margin"	>${sanpham.donGia}</td>
+							<td style="width: 15%;" class="w3-margin">${sanpham.donGia}</td>
 							<td>
 								<a href="${pageContext.request.contextPath}/admin/showformedit/${sanpham.maSanPham}">
 									<button class="w3-button w3-margin w3-red" type="button">Sửa</button></a>

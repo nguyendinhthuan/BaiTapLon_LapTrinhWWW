@@ -98,4 +98,9 @@ public class SanPhamDAO {
 	 * jdbcTemplate.queryForObject(sql, new
 	 * BeanPropertyRowMapper<SanPham>(SanPham.class)); }
 	 */
+	
+	public int delete(String masp) {
+		String sql = "DELETE FROM SanPham WHERE maSanPham = '" + masp + "'" ;
+		return jdbcTemplate.update(sql);
+	}
 }

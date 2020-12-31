@@ -120,9 +120,4 @@ public class HoaDonDAO {
 				+ cthd.getThanhTien() + ", '" + cthd.getMaSanPham() + "'," + cthd.getMaHoaDon() + ")";
 		return jdbcTemplate.update(sql);
 	}
-	
-//	public int deleteProduct(String masp) {
-//		String sql = "delete from SanPham where = '" + masp + "'" ;
-//		return jdbcTemplate.remove();
-//	}
 }

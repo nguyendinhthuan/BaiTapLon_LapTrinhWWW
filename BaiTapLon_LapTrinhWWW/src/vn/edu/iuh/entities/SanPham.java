@@ -1,9 +1,15 @@
 package vn.edu.iuh.entities;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class SanPham {
 	private String maSanPham;
 	private String tenSanPham;
 	private double donGia;
+	
+	@NotEmpty(message = "Vui lòng chọn hình ảnh")
 	private String urlHinhAnh;
 	private String moTa;
 	private String tinhTrang;
