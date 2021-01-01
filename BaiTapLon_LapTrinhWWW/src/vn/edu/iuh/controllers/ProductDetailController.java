@@ -18,7 +18,7 @@ public class ProductDetailController {
 	private SanPhamDAO sanPhamDAO;
 	
 	@RequestMapping(value= {"/product_detail/{maSanPham}"}, method = RequestMethod.GET)
-	public ModelAndView productdetail(ModelAndView modelandview, @PathVariable String maSanPham) {
+	public ModelAndView productdetail(ModelAndView modelandview, @PathVariable Integer maSanPham) {
 		SanPham sanPham = sanPhamDAO.getSanPham(maSanPham);
 		return new ModelAndView("product_detail", "SanPham", sanPham);
 	}

@@ -2,10 +2,11 @@ package vn.edu.iuh.entities;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class SanPham {
-	private String maSanPham;
+	private Integer maSanPham;
 	private String tenSanPham;
 	private double donGia;
 	
@@ -20,7 +21,7 @@ public class SanPham {
 		super();
 	}
 
-	public SanPham(String maSanPham, String tenSanPham, double donGia, String urlHinhAnh, String moTa, String tinhTrang,
+	public SanPham(Integer maSanPham, String tenSanPham, double donGia, String urlHinhAnh, String moTa, String tinhTrang,
 			int soLuongTon, String loaiSanPham) {
 		super();
 		this.maSanPham = maSanPham;
@@ -33,11 +34,11 @@ public class SanPham {
 		this.loaiSanPham = loaiSanPham;
 	}
 
-	public String getMaSanPham() {
+	public Integer getMaSanPham() {
 		return maSanPham;
 	}
 
-	public void setMaSanPham(String maSanPham) {
+	public void setMaSanPham(Integer maSanPham) {
 		this.maSanPham = maSanPham;
 	}
 
@@ -103,5 +104,4 @@ public class SanPham {
 				+ urlHinhAnh + ", moTa=" + moTa + ", tinhTrang=" + tinhTrang + ", soLuongTon=" + soLuongTon
 				+ ", loaiSanPham=" + loaiSanPham + "]";
 	}
-
 }

@@ -9,6 +9,10 @@
 	</a>
 	<div id="demoAcc"
 		class="w3-bar-block w3-hide w3-padding-large w3-medium">
+		<a href="${pageContext.request.contextPath}/product_all" 
+			class="w3-bar-item w3-button w3-light-grey"><i
+			class="fa fa-caret-right w3-margin-right"></i>Tất cả</a> 
+			
 		<a href="${pageContext.request.contextPath}/product_mayin" 
 			class="w3-bar-item w3-button w3-light-grey"><i
 			class="fa fa-caret-right w3-margin-right"></i>Máy In</a> 
@@ -16,6 +20,14 @@
 		<a href="${pageContext.request.contextPath}/product_mayscan"
 			class="w3-bar-item w3-button w3-light-grey"><i
 			class="fa fa-caret-right w3-margin-right"></i>Máy Scan</a>
+			
+		<a href="${pageContext.request.contextPath}/product_cao"
+			class="w3-bar-item w3-button w3-light-grey"><i
+			class="fa fa-caret-right w3-margin-right"></i>Từ 5tr trở lên</a>
+			
+		<a href="${pageContext.request.contextPath}/product_thap"
+			class="w3-bar-item w3-button w3-light-grey"><i
+			class="fa fa-caret-right w3-margin-right"></i>Từ 5tr trở xuống</a>
 	</div>
 	<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
 		<div class="w3-bar-item w3-padding-24 w3-wide">

@@ -53,7 +53,7 @@ public class HoaDonDAO {
 				cthd.setMaChiTietHoaDon(rs.getInt(1));
 				cthd.setSoLuong(rs.getInt(2));
 				cthd.setThanhTien(rs.getFloat(3));
-				cthd.setMaSanPham(rs.getString(4));
+				cthd.setMaSanPham(rs.getInt(4));
 				cthd.setMaHoaDon(rs.getInt(5));
 				return cthd;
 			}
@@ -69,7 +69,7 @@ public class HoaDonDAO {
 				cthd.setMaChiTietHoaDon(rs.getInt(1));
 				cthd.setSoLuong(rs.getInt(2));
 				cthd.setThanhTien(rs.getFloat(3));
-				cthd.setMaSanPham(rs.getString(4));
+				cthd.setMaSanPham(rs.getInt(4));
 				cthd.setMaHoaDon(rs.getInt(5));
 				return cthd;
 			}

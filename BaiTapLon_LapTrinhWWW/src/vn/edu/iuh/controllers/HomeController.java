@@ -15,12 +15,14 @@ public class HomeController {
 	@Autowired
 	private SanPhamDAO sanPhamDAO;
 	
+	//Trang chu
 	@RequestMapping(value= {"home","/"}, method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView modelAndView) {
 		List<SanPham> list = sanPhamDAO.getAllSanPham();
 		return new ModelAndView("home", "list", list);
 	}
 	
+	//Trang admin
 	@RequestMapping(value = "/admin")
 	public ModelAndView adminview() {
 		List<SanPham> list = sanPhamDAO.getAllSanPham();

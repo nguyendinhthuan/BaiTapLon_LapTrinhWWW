@@ -49,7 +49,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		style="z-index: 3; width: 250px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
-				<a href="home"><img width="30%" height="30%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
+				<a href="home"><img width="20%" height="20%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
 			</h3>
 		</div>
 	</nav>
@@ -78,7 +78,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 					<a href="<c:url value="/resources/${SanPham.urlHinhAnh}"/>"
 						title="Epson801"> <img
 						src="<c:url value="/resources/${SanPham.urlHinhAnh}"/>"
-						style="width: 100%" alt="Epson801" />
+						style="width: 80%" alt="Epson801" />
 					</a>
 				</div>
 			</div>
@@ -88,7 +88,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 							<hr class="soft" />
 							<form class="form-horizontal qtyFrm">
 								<div class="control-group">
-									<label class="control-label"><h2><span style="color:red">${SanPham.donGia}</span></h2></label>
+									<label class="control-label"><h2><span style="color:red">${SanPham.donGia} VNĐ</span></h2></label>
 									<div class="controls">
 										<a href="${pageContext.request.contextPath }/themGioHang/${SanPham.maSanPham}">
 											<button style="margin-top: 20px; margin-left: 50px" type="button" class="btn btn-warning"

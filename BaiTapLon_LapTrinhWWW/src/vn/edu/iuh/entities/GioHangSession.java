@@ -29,5 +29,4 @@ public class GioHangSession {
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
-
 }

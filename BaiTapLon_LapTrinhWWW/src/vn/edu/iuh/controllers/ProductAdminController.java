@@ -36,26 +36,28 @@ public class ProductAdminController {
 	@Autowired
 	private HoaDonDAO hoaDonDAO;
 
-	// sap xep danh sach san pham theo may in
+	//Sap xep danh sach san pham theo may in
 	@RequestMapping(value = "/admin/orderbymayin")
 	public ModelAndView viewOrderbyMayin() {
 		List<SanPham> list = sanPhamDAO.getMayIn();
 		return new ModelAndView("product_admin", "listpros", list);
 	}
 
-	// sap xep danh sach san pham theo may scan
+	//Sap xep danh sach san pham theo may scan
 	@RequestMapping(value = "/admin/orderbymayscan")
 	public ModelAndView viewOrderbyMayscan() {
 		List<SanPham> list = sanPhamDAO.getMayScan();
 		return new ModelAndView("product_admin", "listpros", list);
 	}
 
+	//Show view chinh sua san pham
 	@RequestMapping(value = "/admin/showformedit/{maSanPham}")
-	public ModelAndView viewEditProduct(@PathVariable String maSanPham) {
+	public ModelAndView viewEditProduct(@PathVariable Integer maSanPham) {
 		SanPham sp = sanPhamDAO.getSanPham(maSanPham);
 		return new ModelAndView("edit_product", "command", sp);
 	}
-
+	
+	//Show view them san pham
 	@RequestMapping(value = "/admin/showforminsert")
 	public ModelAndView viewAddProduct() {
 		return new ModelAndView("insert_product", "command", new SanPham());
@@ -82,12 +84,11 @@ public class ProductAdminController {
 	}
 
 	@RequestMapping(value = "/admin/delete/{maSanPham}", method = RequestMethod.GET)
-	public ModelAndView deleteProduct(@PathVariable String maSanPham, ModelMap mm) {
+	public ModelAndView deleteProduct(@PathVariable Integer maSanPham, ModelMap mm) {
 		List<ChiTietHoaDon> list = hoaDonDAO.getAllChiTietHoaDon();
 		String key = "fail";
 		for(ChiTietHoaDon ct : list) {
-			if(ct.getMaSanPham().equals(maSanPham) == true) {
-				//System.out.println("Sản phẩm đang được đặt hàng");
+			if(ct.getMaSanPham() == (maSanPham)) {
 				key = "work";
 			}	
 		}
@@ -105,14 +106,8 @@ public class ProductAdminController {
 			hoaDon.setChiTietHoaDon(hoaDonDAO.getChiTietHoaDon(hoaDon.getMaHoaDon()));
 			for (ChiTietHoaDon ct : hoaDon.getChiTietHoaDon()) {
 				ct.setSanPham(sanPhamDAO.getSanPham(ct.getMaSanPham()));
-				// System.out.println("ma san pham : " + ct.getSP().getMaSanPham() + "--" +
-				// ct.getSl());
 			}
-			// System.out.println("ma hoa don : " + hoaDon.getMaHoaDon());
 		}
-
-		// System.out.println("chi tiet = " +
-		// list.get(0).getChitietHD().get(0).getSP().getTenSanPham());
 		return new ModelAndView("order_details", "listorder", list);
 	}
 
@@ -125,8 +120,8 @@ public class ProductAdminController {
 	@ModelAttribute("loaisanpham")
 	public List<LoaiSanPham> getLoai() {
 		List<LoaiSanPham> loai = new ArrayList<LoaiSanPham>();
-		loai.add(new LoaiSanPham("may in", "Máy In"));
-		loai.add(new LoaiSanPham("may scan", "Máy Scan"));
+		loai.add(new LoaiSanPham("Máy in", "Máy In"));
+		loai.add(new LoaiSanPham("Máy scan", "Máy Scan"));
 
 		return loai;
 	}

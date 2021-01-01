@@ -23,14 +23,14 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
-.w3-sidebar a {
-	font-family: "Roboto";
-	text-decoration: none;
-}
+	.w3-sidebar a {
+		font-family: "Roboto";
+		text-decoration: none;
+	}
 
-body, h1, h2, h3, h4, h5, h6, .w3-wide {
-	font-family: "Montserrat";
-}
+	body, h1, h2, h3, h4, h5, h6, .w3-wide {
+		font-family: "Montserrat";
+	}
 </style>
 
 <!-- Bootstrap style responsive -->
@@ -45,7 +45,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		style="z-index: 3; width: 220px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
-				<a href="home"><img width="30%" height="30%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
+				<a href="home"><img width="20%" height="20%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
 			</h3>
 		</div>
 		<jsp:include page="_navbar.jsp"></jsp:include>
@@ -77,20 +77,20 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 			<!-- Image header -->
 			<div class="w3-display-container w3-container">
 				<img src="<c:url value="/resources/themes/images/desktop.png" />"
-					alt="image" style="width: 80%; height: 80%">
-				<div class="w3-display-topleft w3-text-black"
+					alt="image" style="width: 85%; height: 70%">
+				<div class="w3-display-topleft w3-text-white"
 					style="padding: 24px 48px">
 					<h1 class="w3-jumbo w3-hide-small" style="padding: 20px 0px">Mua
-						bán máy in</h1>
+						bán máy in, máy scan</h1>
 					<h1 class="w3-hide-small" style="padding: 20px 0px">Cũ - mới</h1>
 					<p>
 						<a href="#procontent"
-							class="w3-button w3-black w3-padding-large w3-large">MUA NGAY</a>
+							class="w3-button w3-black w3-padding-large w3-large">XEM NGAY</a>
 					</p>
 				</div>
 			</div>
 			
-			<div class="container" id="procontent">
+			<div class="container" id="procontent" style="margin-left: 45px; width: 85%">
 				<div class="row">
 					<h4>Danh sách sản phẩm</h4>
 					<ul class="thumbnails">
@@ -101,10 +101,10 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 										src="<c:url value="/resources/${sanpham.urlHinhAnh}" />"
 										alt="" /></a>
 									<div class="caption">
-										<h5>${sanpham.maSanPham}</h5>
-										<h5>${sanpham.tenSanPham}</h5>
+										<h5>Mã: ${sanpham.maSanPham}</h5>
+										<h5>Tên: ${sanpham.tenSanPham}</h5>
 										<h4 style="text-align: center">
-											<p href="product_detail/${sanpham.maSanPham}">${sanpham.donGia} VNĐ</p>
+											<p href="product_detail/${sanpham.maSanPham}">Giá: ${sanpham.donGia} VNĐ</p>
 										</h4>
 									</div>
 								</div>
@@ -114,7 +114,6 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 				</div>
 			</div>
 		</div>
-		
 		<jsp:include page="_footer.jsp"></jsp:include>
 	</div>
 

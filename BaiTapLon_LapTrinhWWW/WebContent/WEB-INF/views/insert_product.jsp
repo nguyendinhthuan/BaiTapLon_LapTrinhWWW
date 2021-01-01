@@ -51,7 +51,7 @@ tr {
 		style="z-index: 3; width: 250px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
-				<a href="${pageContext.request.contextPath}/"><img width="30%" height="30%"
+				<a href="${pageContext.request.contextPath}/"><img width="20%" height="20%"
 					src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
 			</h3>
 		</div>
@@ -87,13 +87,8 @@ tr {
 					method="POST">
 					<table>
 						<tr>
-							<td><h5>Mã sản phẩm:</h5></td>
-							<td><form:input type="text" path="maSanPham"
-									class="w3-padding-16" /> <form:errors path="maSanPham"></form:errors></td>
-						</tr>
-						<tr>
 							<td><h5>Tên sản phẩm:</h5></td>
-							<td><form:input type="text" path="tenSanPham"
+							<td><form:input type="text" path="tenSanPham" 
 									class="w3-padding-16" /> <form:errors path="tenSanPham"></form:errors></td>
 						</tr>
 						<tr>

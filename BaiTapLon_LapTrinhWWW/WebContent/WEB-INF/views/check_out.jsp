@@ -39,7 +39,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 		style="z-index: 3; width: 250px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
-				<a href="home"><img width="30%" height="30%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
+				<a href="home"><img width="20%" height="20%" src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
 			</h3>
 		</div>
 	</nav>

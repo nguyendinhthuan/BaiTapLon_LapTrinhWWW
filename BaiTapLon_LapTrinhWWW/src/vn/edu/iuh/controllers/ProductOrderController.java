@@ -36,10 +36,10 @@ public class ProductOrderController {
 	private HoaDonDAO hoaDonDAO;
 	
 	@RequestMapping(value = "themGioHang/{maSanPham}", method = RequestMethod.GET)
-	public String themGioHang(ModelMap mm, HttpSession session, @PathVariable("maSanPham") String maSanPham) {
-		HashMap<String, GioHangSession> cartItems = (HashMap<String, GioHangSession>) session.getAttribute("myCartItems");
+	public String themGioHang(ModelMap mm, HttpSession session, @PathVariable("maSanPham") Integer maSanPham) {
+		HashMap<Integer, GioHangSession> cartItems = (HashMap<Integer, GioHangSession>) session.getAttribute("myCartItems");
 		if (cartItems == null) {
-            cartItems = new HashMap<String, GioHangSession>();
+            cartItems = new HashMap<Integer, GioHangSession>();
         }
 		SanPham sanPham = sanPhamDAO.getSanPham(maSanPham);
         if (sanPham != null) {
@@ -63,7 +63,7 @@ public class ProductOrderController {
 	
 	@RequestMapping(value = "/product_order", method = RequestMethod.GET)
     public String order(ModelMap mm, HttpSession session) {
-        HashMap<String, GioHangSession> cartItems = (HashMap<String, GioHangSession>) session.getAttribute("myCartItems");
+        HashMap<Integer, GioHangSession> cartItems = (HashMap<Integer, GioHangSession>) session.getAttribute("myCartItems");
         if (cartItems != null) { 
 	        session.getAttribute("myCartItems");
 	        session.getAttribute("myCartTotal");
@@ -74,7 +74,7 @@ public class ProductOrderController {
 	
 	@RequestMapping(value = "/product_order/summary", method = RequestMethod.GET)
 	public ModelAndView listOrder(HttpSession session) {
-		HashMap<String, GioHangSession> cartItems = (HashMap<String, GioHangSession>) session.getAttribute("myCartItems");
+		HashMap<Integer, GioHangSession> cartItems = (HashMap<Integer, GioHangSession>) session.getAttribute("myCartItems");
 		if (cartItems != null) {
 			session.getAttribute("myCartItems");
 			session.getAttribute("myCartTotal");
@@ -89,7 +89,7 @@ public class ProductOrderController {
 		 List<ChiTietHoaDon> dsct = new ArrayList<ChiTietHoaDon>();
 		 int mahd = 10000 + (int)(Math.random()*1000);
 		  
-		 HashMap<String, GioHangSession> cartItems = (HashMap<String, GioHangSession>)session.getAttribute("myCartItems"); 
+		 HashMap<Integer, GioHangSession> cartItems = (HashMap<Integer, GioHangSession>)session.getAttribute("myCartItems"); 
 		 if (cartItems != null) { 
 			int soluong = 0;  
 			double tongtien = 0; 
@@ -105,7 +105,7 @@ public class ProductOrderController {
 			hoadon.setNgayHoaDon(new java.sql.Date(date.getTime()));
 			hoaDonDAO.insertHoaDon(hoadon);
 			
-			for (Map.Entry<String, GioHangSession> list : cartItems.entrySet()) {
+			for (Map.Entry<Integer, GioHangSession> list : cartItems.entrySet()) {
 				//count += list.getValue().getSanPham().getDonGia() * list.getValue().getSoLuong();
 				ChiTietHoaDon cthd = new ChiTietHoaDon(list.getValue().getSoLuong(), list.getValue().getSanPham().getMaSanPham(),
 						list.getValue().getSanPham().getDonGia() * list.getValue().getSoLuong(), mahd);
@@ -122,11 +122,11 @@ public class ProductOrderController {
 	}
 	
 	@RequestMapping(value = "/tangSoLuong/{maSanPham}/{soLuongTon}", method = RequestMethod.GET)
-    public String tangSoLuong(ModelMap mm, HttpSession session,  @PathVariable("maSanPham") String maSanPham, @PathVariable("soLuongTon") int soLuongTon, HttpServletRequest request) {
-        HashMap<String, GioHangSession> cartItems_old = (HashMap<String, GioHangSession>) session.getAttribute("myCartItems");
+    public String tangSoLuong(ModelMap mm, HttpSession session,  @PathVariable("maSanPham") Integer maSanPham, @PathVariable("soLuongTon") int soLuongTon, HttpServletRequest request) {
+        HashMap<Integer, GioHangSession> cartItems_old = (HashMap<Integer, GioHangSession>) session.getAttribute("myCartItems");
         if (cartItems_old != null) {
         	GioHangSession gioHangSession = cartItems_old.get(maSanPham);
-        	HashMap<String, GioHangSession> cartItems_new = cartItems_old;
+        	HashMap<Integer, GioHangSession> cartItems_new = cartItems_old;
         	if (cartItems_old.get(maSanPham).getSoLuong() + 1 <= soLuongTon ) {
         		gioHangSession.setSoLuong(cartItems_old.get(maSanPham).getSoLuong() + 1);
 	        	session.setAttribute("myCartItems", cartItems_new);
@@ -141,11 +141,11 @@ public class ProductOrderController {
     }
 	
 	@RequestMapping(value = "/giamSoLuong/{maSanPham}", method = RequestMethod.GET)
-    public String giamSoLuong(ModelMap mm, HttpSession session,  @PathVariable("maSanPham") String maSanPham, HttpServletRequest request) {
-        HashMap<String, GioHangSession> cartItems_old = (HashMap<String, GioHangSession>) session.getAttribute("myCartItems");
+    public String giamSoLuong(ModelMap mm, HttpSession session,  @PathVariable("maSanPham") Integer maSanPham, HttpServletRequest request) {
+        HashMap<Integer, GioHangSession> cartItems_old = (HashMap<Integer, GioHangSession>) session.getAttribute("myCartItems");
         if (cartItems_old != null) {
         	GioHangSession gioHangSession = cartItems_old.get(maSanPham);
-        	HashMap<String, GioHangSession> cartItems_new = cartItems_old;
+        	HashMap<Integer, GioHangSession> cartItems_new = cartItems_old;
         	if (cartItems_old.get(maSanPham).getSoLuong() - 1 > 0) {
 	        	gioHangSession.setSoLuong(cartItems_old.get(maSanPham).getSoLuong() - 1);
 	        	session.setAttribute("myCartItems", cartItems_new);
@@ -168,9 +168,9 @@ public class ProductOrderController {
         return "redirect:/product_order";
     }
 	
-	public double totalPrice(HashMap<String, GioHangSession> cartItems) {
+	public double totalPrice(HashMap<Integer, GioHangSession> cartItems) {
         double count = 0;
-        for (Map.Entry<String, GioHangSession> list : cartItems.entrySet()) {
+        for (Map.Entry<Integer, GioHangSession> list : cartItems.entrySet()) {
             count += list.getValue().getSanPham().getDonGia() * list.getValue().getSoLuong();
         }
         return count;

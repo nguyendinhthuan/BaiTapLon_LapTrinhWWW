@@ -31,5 +31,4 @@ public class GioHang {
 	public void setTongTien(double tongTien) {
 		this.tongTien = tongTien;
 	}
-
 }

@@ -5,7 +5,7 @@ import java.util.List;
 public class ChiTietHoaDon {
 	private int maChiTietHoaDon;
 	private int soLuong;
-	private String maSanPham;
+	private int maSanPham;
 	private double thanhTien;
 	private int maHoaDon;
 
@@ -15,7 +15,7 @@ public class ChiTietHoaDon {
 		super();
 	}
 
-	public ChiTietHoaDon(int soLuong, String maSanPham, double thanhTien, int maHoaDon) {
+	public ChiTietHoaDon(int soLuong, int maSanPham, double thanhTien, int maHoaDon) {
 		super();
 		this.soLuong = soLuong;
 		this.maSanPham = maSanPham;
@@ -39,11 +39,11 @@ public class ChiTietHoaDon {
 		this.soLuong = soLuong;
 	}
 
-	public String getMaSanPham() {
+	public int getMaSanPham() {
 		return maSanPham;
 	}
 
-	public void setMaSanPham(String maSanPham) {
+	public void setMaSanPham(int maSanPham) {
 		this.maSanPham = maSanPham;
 	}
 

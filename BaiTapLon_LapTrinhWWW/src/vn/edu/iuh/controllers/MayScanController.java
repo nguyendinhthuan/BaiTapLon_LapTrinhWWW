@@ -16,6 +16,7 @@ public class MayScanController {
 	@Autowired
 	private SanPhamDAO sanPhamDAO;
 	
+	//Loc may scan
 	@RequestMapping(value= {"/product_mayscan"}, method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView modelandview) {
 		List<SanPham> list = sanPhamDAO.getMayScan();

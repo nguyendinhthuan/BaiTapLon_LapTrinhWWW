@@ -1,9 +1,7 @@
 package vn.edu.iuh.entities;
 
 public class LoaiSanPham {
-	
 	private String id;
-	
 	private String name;
 
 	public String getId() {
@@ -31,6 +29,4 @@ public class LoaiSanPham {
 	public LoaiSanPham() {
 		super();
 	}
-
-
 }

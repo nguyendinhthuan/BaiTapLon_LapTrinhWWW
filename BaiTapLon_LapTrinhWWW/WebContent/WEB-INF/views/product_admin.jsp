@@ -39,7 +39,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 		style="z-index: 3; width: 250px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
-				<a href="${pageContext.request.contextPath}/"><img width="30%" height="30%"
+				<a href="${pageContext.request.contextPath}/"><img width="20%" height="20%"
 					src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
 			</h3>
 		</div>
@@ -61,8 +61,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 			<div class="w3-responsive">
 				<table class="w3-table-all w3-large" style = "margin-bottom: 20px;">
 					<tr>
-						<th style = "width : 46%;">Sản phẩm</th>
-						<th style = "width : 15%;">Đơn giá</th>
+						<th style = "width : 55%;">Sản phẩm</th>
+						<th style = "width : 20%;">Đơn giá</th>
 						<th>Thao tác</th>
 					</tr>	
 				</table>
@@ -89,14 +89,15 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 				<table class="w3-table w3-large w3-border">
 					<c:forEach var = "sanpham" items = "${listpros }">
 						<tr>
-							<td style="width: 46%;" class="w3-row">
+							<td style="width: 55%;" class="w3-row">
 								<div class="w3-third">
 									<img
 										src="<c:url value="/resources/${sanpham.urlHinhAnh}" />"
 										alt="image" style="width: 100px">
 								</div>
 								<div class="w3-third">
-									<p class="w3-margin">${sanpham.tenSanPham}</p>
+									<p class="w3-margin">Mã: ${sanpham.maSanPham}</p>
+									<p class="w3-margin">Tên: ${sanpham.tenSanPham}</p>
 								</div>
 								<div class="w3-third">
 									<div class="w3-margin">
@@ -113,7 +114,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat";}
 									</div>
 								</div>
 							</td>
-							<td style="width: 15%;" class="w3-margin">${sanpham.donGia}</td>
+							<td style="width: 15%;" class="w3-margin">${sanpham.donGia} VNĐ</td>
 							<td>
 								<a href="${pageContext.request.contextPath}/admin/showformedit/${sanpham.maSanPham}">
 									<button class="w3-button w3-margin w3-red" type="button">Sửa</button></a>

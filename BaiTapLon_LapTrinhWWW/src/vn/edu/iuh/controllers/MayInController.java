@@ -15,9 +15,31 @@ public class MayInController {
 	@Autowired
 	private SanPhamDAO sanPhamDAO;
 	
+	//Loc may in
 	@RequestMapping(value= {"/product_mayin"}, method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView modelandview) {
 		List<SanPham> list = sanPhamDAO.getMayIn();
+		return new ModelAndView("home", "list", list);
+	}
+	
+	//Loc san pham co gia cao hon 5 trieu
+	@RequestMapping(value= {"/product_cao"}, method = RequestMethod.GET)
+	public ModelAndView homeCao(ModelAndView modelandview) {
+		List<SanPham> list = sanPhamDAO.getSanPhamGiaCaoHon5Trieu();
+		return new ModelAndView("home", "list", list);
+	}
+	
+	//Loc san pham co gia thap hon 5 trieu
+	@RequestMapping(value= {"/product_thap"}, method = RequestMethod.GET)
+	public ModelAndView homeThap(ModelAndView modelandview) {
+		List<SanPham> list = sanPhamDAO.getSanPhamGiaThapHon5Trieu();
+		return new ModelAndView("home", "list", list);
+	}
+	
+	//Tat ca san pham
+	@RequestMapping(value= {"/product_all"}, method = RequestMethod.GET)
+	public ModelAndView homeAll(ModelAndView modelandview) {
+		List<SanPham> list = sanPhamDAO.getAllSanPham();
 		return new ModelAndView("home", "list", list);
 	}
 }

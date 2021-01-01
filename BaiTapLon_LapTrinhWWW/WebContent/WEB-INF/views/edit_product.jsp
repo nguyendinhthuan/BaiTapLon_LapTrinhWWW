@@ -46,7 +46,7 @@ tr {
 		style="z-index: 3; width: 250px" id="mySidebar">
 		<div class="w3-container w3-display-container w3-padding-16">
 			<h3 class="w3-wide">
-				<a href="${pageContext.request.contextPath}/"><img width="30%" height="30%"
+				<a href="${pageContext.request.contextPath}/"><img width="20%" height="20%"
 					src="<c:url value="/resources/themes/images/logo-home1.png" />"></a>
 			</h3>
 		</div>
@@ -79,7 +79,6 @@ tr {
 			method="POST" >
 			<div class="w3-row">
 				<div class="w3-half" style="margin-left: 15%;">
-
 					<table>
 						<form:hidden path="maSanPham" />
 						<tr>
